@@ -22,7 +22,12 @@ pip install numpy opencv-python
 
 
 Usage
-Prepare Your Videos: Place all the .mp4 video files you want to process in a single directory.
+Prepare Your Videos: Place all the .mp4 video files you want to process in a single directory. DONT FORGET TO RENAME THIS LINE WITH YOU PATH:
+
+```
+#put your folder name here
+process_folder('vids')
+```
 
 Run the Script: Execute the script and follow the on-screen instructions to select the color to track in each video. The script will process each video file in the directory.
 
@@ -55,9 +60,4 @@ Each JSON file contains frame-by-frame positional data of the tracked color, str
 
 
 
-### Notes for Using the README:
-
-- Replace `"path_to_your_folder"` in the usage instructions with the actual path to the folder containing your video files.
-- If there are additional steps or specific conditions relevant to your script, you should add those to the README.
-- This README provides a basic outline. You might want to expand certain sections depending on the complexity and specifics of your script.
 
