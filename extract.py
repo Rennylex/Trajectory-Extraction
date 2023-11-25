@@ -11,12 +11,17 @@ def click_event(event, x, y, flags, params):
         # Get the BGR color of the pixel where the user clicked
         bgr_color = frame[y, x, :]
 
-        # Define a range around the selected BGR color
-        color_range = 10  # Adjust this for a wider or narrower range
-        lower_range = bgr_color - color_range
-        upper_range = bgr_color + color_range
-        lower_range[lower_range < 0] = 0  # Ensuring lower range is not negative
-        upper_range[upper_range > 255] = 255  # Ensuring upper range doesn't exceed 255
+        color_range = 20
+
+        lower_range = np.clip(bgr_color - color_range, 0, 255)
+        upper_range = np.clip(bgr_color + color_range, 0, 255)
+
+        for i in range(3):
+            if bgr_color[i] - color_range < 0:
+                lower_range[i] = 0
+            if bgr_color[i] + color_range > 255:
+                upper_range[i] = 255
+
 
         params['range'] = (lower_range, upper_range)
         # Signal that the color has been picked
