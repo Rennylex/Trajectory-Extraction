@@ -13,7 +13,7 @@ This script processes video files in a specified directory, detecting and tracki
 
 ## Installation
 
-Before running the script, ensure you have Python installed on your system. You can install the required Python libraries using pip:
+You can install the required Python libraries using pip:
 
 ```bash
 pip install numpy opencv-python
